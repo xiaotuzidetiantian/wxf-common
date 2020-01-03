@@ -12,7 +12,7 @@ import java.util.Date;
 
 public class DateUtil {
 
-	//获取一个月的月初
+	//获取一个月的月初 如：2020-01-01 00:00:00
 	public static Date initMonth(Date date) {
 		//获取一个日期类
 		Calendar calendar = Calendar.getInstance();
@@ -26,7 +26,7 @@ public class DateUtil {
 		calendar.set(calendar.MINUTE, 0);
 		//设置秒
 		calendar.set(calendar.SECOND, 0);
-		return date;
+		return calendar.getTime();
 	}
 	
 	//返回一个月的月末
@@ -83,7 +83,7 @@ public class DateUtil {
 		if(s_month == b_month && s_day < b_day) {
 			age--;
 		}
-		return 0;
+		return age;
 	}
 	
 	

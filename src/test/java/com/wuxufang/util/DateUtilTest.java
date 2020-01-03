@@ -22,7 +22,7 @@ public class DateUtilTest {
 	
 	@Test
 	public void testInitMonth() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date date = DateUtil.initMonth(new Date());
 		System.out.println(sdf.format(date));
 	}
