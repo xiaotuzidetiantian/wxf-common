@@ -3,8 +3,8 @@ package com.wuxufang.util;
  * 
  * @ClassName: DateUtil 
  * @Description: TODO
- * @author: ìÏ
- * @date: 2020Äê1ÔÂ2ÈÕ ÏÂÎç10:56:20
+ * @author: ç…œ
+ * @date: 2020å¹´1æœˆ2æ—¥ ä¸‹åˆ2:57:43
  */
 
 import java.util.Calendar;
@@ -12,34 +12,34 @@ import java.util.Date;
 
 public class DateUtil {
 
-	//»ñÈ¡Ò»¸öÔÂµÄÔÂ³õ Èç£º2020-01-01 00:00:00
+	//è·å–ä¸€ä¸ªæœˆçš„æœˆåˆ å¦‚ ï¼š2020-01-01 00:00:00
 	public static Date initMonth(Date date) {
-		//»ñÈ¡Ò»¸öÈÕÆÚÀà
+		//è·å–ä¸€ä¸ªæ—¥æœŸç±»
 		Calendar calendar = Calendar.getInstance();
-		//ÓÃ´«ÈëµÄÈÕÆÚ³õÊ¼ÈÕÀúÀà
+		//ç”¨ä¼ å…¥çš„æ—¥æœŸåˆå§‹æ—¥å†ç±»
 		calendar.setTime(date);
-		//ÉèÖÃÎªµ±Ç°ÈÕÆÚµÄµÚÒ»Ìì
+		//è®¾ç½®ä¸ºå½“å‰æ—¥æœŸçš„ç¬¬ä¸€å¤©
 		calendar.set(calendar.DAY_OF_MONTH, 1);
-		//ÉèÖÃĞ¡Ê±
+		//è®¾ç½®å°æ—¶
 		calendar.set(calendar.HOUR_OF_DAY, 0);
-		//ÉèÖÃ·ÖÖÓ
+		//åˆ†é’Ÿ
 		calendar.set(calendar.MINUTE, 0);
-		//ÉèÖÃÃë
+		//ç§’
 		calendar.set(calendar.SECOND, 0);
 		return calendar.getTime();
 	}
 	
-	//·µ»ØÒ»¸öÔÂµÄÔÂÄ©
+	//è¿”å›ä¸€ä¸ªæœˆæœˆæœ«
 	public static Date endMonth(Date date) {
-		//ÈÃÔÂ¼ÓÒ»£¬±ä³ÉÔÂ³õ£¬ÔÚ¼õÈ¥Ò»Ãë
+		//æ€è·¯ï¼š è®©æœˆåŠ 1 ï¼Œå†å˜æˆæœˆåˆï¼Œæœ€åå‡å»1ç§’
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
-		//ÈÃÔÂ·İ¼ÓÒ»
+		//è®©æœˆä»½+1
 		calendar.add(calendar.MONTH, 1);
-		//ÈÃÊ±¼ä±ä³ÉÔÂ³õ
+		//è®©æ—¶é—´å˜æˆæœˆåˆ
 		Date initMonth = initMonth(calendar.getTime());
 		calendar.setTime(initMonth);
-		//ÈÃÈÕÆÚ¼õÈ¥1Ãë
+		//è®©æ—¥æœŸå‡å»1
 		calendar.add(calendar.SECOND,-1);
 		return calendar.getTime();
 	}
@@ -48,38 +48,37 @@ public class DateUtil {
 	/**
 	 * 
 	 * @Title: getAgeByBirthday 
-	 * @Description: ¸ù¾İ³öÉúÈÕÆÚ¼ÆËãÄêÁäTODO
+	 * @Description: ä½¿ç”¨æ—¥å†ç±»è®¡ç®—  ï¼šæ ¹æ®å‡ºç”Ÿæ—¥æœŸç®—å¹´é¾„
 	 * @param date
 	 * @return
 	 * @return: int
 	 */
 	public static int getAgeByBirthday(Date date) {
-		//Ê¹ÓÃÈÕÀúÀà¼ÆËãÄêÁä
-		//ÓÃÏµÍ³Ê±¼ä»ñÈ¡ÈÕÀúÀà
+		//ç”¨ç³»ç»Ÿæ—¶é—´è·å–æ—¥å†ç±»
 		Calendar calendar = Calendar.getInstance();
-		//»ñÈ¡ÏµÍ³µÄÄê
+		//è·å–ç³»ç»Ÿçš„å¹´
 		int s_year = calendar.get(calendar.YEAR);
-		//»ñÈ¡ÏµÍ³µÄÔÂ
+		//è·å–ç³»ç»Ÿçš„æœˆ
 		int s_month = calendar.get(calendar.MONTH);
-		//»ñÈ¡ÏµÍ³µÄÈÕ
+		//è·å–ç³»ç»Ÿçš„æ—¥
 		int s_day = calendar.get(calendar.DAY_OF_MONTH);
 		
-		//ÓÃ´«ÈëµÄÈÕÆÚ³õÊ¼»¯Ò»¸öÈÕÀúÀà
+		//ç”¨ä¼ å…¥çš„æ—¥æœŸåˆå§‹åŒ–ä¸€ä¸ªæ—¥å†ç±»
 		calendar.setTime(date);
-		//»ñÈ¡³öÉúÈÕÆÚµÄÄê
+		//è·å–å‡ºç”Ÿæ—¥æœŸçš„å¹´
 		int b_year = calendar.get(calendar.YEAR);
-		//»ñÈ¡³öÉúÈÕÆÚµÄÔÂ
+		//è·å–å‡ºç”Ÿæ—¥æœŸçš„æœˆ
 		int b_month = calendar.get(calendar.MONTH);
-		//»ñÈ¡³öÉúÈÕÆÚµÄÈÕ
+		//è·å–å‡ºç”Ÿæ—¥æœŸçš„æ—¥
 		int b_day = calendar.get(calendar.DAY_OF_MONTH);
 		
-		//ÓÃÏµÍ³Äê-³öÉúÄê
+		//ç”¨ç³»ç»Ÿå¹´ -å‡ºç”Ÿå¹´ 
 		int age = s_year - b_year;
-		//Èç¹ûÏµÍ³ÔÂĞ¡ÓÚ³öÉúÔÂÄêÁä¼õÒ»
+		//å¦‚æœç³»ç»Ÿæœˆå°äºå‡ºç”Ÿæœˆå¹´é¾„å‡ä¸€
 		if(s_month < b_month) {
 			age--;
 		}
-		//ÍÂ¹ıÏµÍ³ÔÂºÍ³õÊ¼ÔÂÒ»ÖÂ²¢ÇÒÏµÍ³ÈÕĞ¡ÓÚ³öÉúÈÕ¼õÒ»
+		//å¦‚æœç³»ç»Ÿæœˆå’Œåˆå§‹æœˆä¸€è‡´å¹¶ä¸”ç³»ç»Ÿæ—¥å°äºå‡ºç”Ÿæ—¥ å¹´é¾„å‡ä¸€
 		if(s_month == b_month && s_day < b_day) {
 			age--;
 		}
@@ -90,16 +89,16 @@ public class DateUtil {
 	/**
 	 * 
 	 * @Title: randomDate 
-	 * @Description: TODO
+	 * @Description: éšæœºè¿”å›ä¸€ä¸ªåœ¨start--endä¹‹é—´çš„æ—¥æœŸ
 	 * @param start
 	 * @param end
 	 * @return
 	 * @return: Date
 	 */
 	public static Date randomDate(Date start,Date end) {
-		//»ñÈ¡¿ªÊ¼ÈÕÆÚµÄºÁÃëÊı
+		//è·å–å¼€å§‹æ—¥æœŸçš„æ¯«ç§’æ•°
 		long t1 = start.getTime();
-		//»ñÈ¡½áÊøÈÕÆÚµÄºÁÃëÊı
+		//è·å–ç»“æŸæ—¥æœŸçš„æ¯«ç§’æ•°
 		long t2 = end.getTime();
 		
 		long t = (long) ((Math.random() * (t2 - t1) +1) + t1);

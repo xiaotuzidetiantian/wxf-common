@@ -13,13 +13,13 @@ public class PersonTest {
 	public void test() {
 		for (int i = 0; i < 10000; i++) {
 			Person person = new Person();
-			//ÐÕÃûÊôÐÔÖµµ÷ÓÃStringUtil.generateChineseName()
+			// å§“åå±žæ€§å€¼è°ƒç”¨StringUtil.generateChineseName()åˆ›å»ºï¼ˆ4åˆ†ï¼‰
 			person.setName(StringUtil.generateChineseName());
-			//ÄêÁäÊôÐÔÖµµ÷ÓÃRandomUtil.random()
+			//å¹´é¾„å±žæ€§å€¼è°ƒç”¨RandomUtil.random()åˆ›å»ºï¼Œå¿…é¡»åœ¨1-120å²ä¹‹é—´ï¼ˆ4åˆ†ï¼‰
 			person.setAge(RandomUtil.random(1, 120));
-			//½éÉÜÊôÐÔÖµµ÷ÓÃStringUtil.randomChineseString()
+			//ä»‹ç»å±žæ€§å€¼è°ƒç”¨StringUtil.randomChineseString()åˆ›å»ºï¼Œå­—æ•°ä¸º140ä¸ªéšæœºæ±‰å­—ï¼ˆ4åˆ†ï¼‰
 			person.setAbout(StringUtil.randomChineseString(140));
-			//×¢²áÈÕÆÚÊôÐÔÖµÄ£Äâ2010Äê1ÔÂ1ÈÕÖÁ½ñÈÎÒâËæ»úÊ±¼ä
+			//æ³¨å†Œæ—¥æœŸå±žæ€§å€¼æ¨¡æ‹Ÿ2010å¹´1æœˆ1æ—¥è‡³ä»Šä»»æ„éšæœºæ—¶é—´ï¼ˆ4åˆ†ï¼‰ã€‚
 			Calendar calendar = Calendar.getInstance();
 			calendar.set(2010, 0, 1);
 			person.setCreated(DateUtil.randomDate(calendar.getTime(), new Date()));
