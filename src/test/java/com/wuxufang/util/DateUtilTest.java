@@ -34,4 +34,11 @@ public class DateUtilTest {
 		System.out.println(sdf.format(date));
 	}
 
+	@Test
+	public void testSubDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date = DateUtil.subDate(new Date());
+		String format = sdf.format(date);
+		System.out.println(format);
+	}
 }

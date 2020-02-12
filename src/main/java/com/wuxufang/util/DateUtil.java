@@ -44,6 +44,17 @@ public class DateUtil {
 		return calendar.getTime();
 	}
 	
+	//把传入的日期时间向前推减24小时
+	public static Date subDate(Date date) {
+		//用当前系统时间去实例化 一个日历类
+		Calendar c = Calendar.getInstance();
+		//用传入的日期实例化日历类
+		c.setTime(date);
+		//借助日历类减去一天
+		c.add(Calendar.DATE, -1);
+		return c.getTime();
+	}
+	
 	
 	/**
 	 * 
